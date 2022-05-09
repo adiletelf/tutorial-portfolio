@@ -1,6 +1,7 @@
 import Logo from './logo';
 import NextLink from 'next/link';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import ThemeToggleButton from './theme-toggle-button';
 
 import {
   Container,
@@ -77,6 +78,7 @@ const Navbar = props => {
         </Stack>
 
         <Box flex={1} align='right'>
+          <ThemeToggleButton />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu isLazy>
               <MenuButton
