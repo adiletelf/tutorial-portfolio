@@ -1,10 +1,24 @@
-import * as react from '@chakra-ui/react';
+import {
+  Container,
+  Box,
+  Heading,
+  Image,
+  Button,
+  List,
+  ListItem,
+  Link,
+  Icon,
+  SimpleGrid,
+  useColorModeValue
+} from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import Layout from '../components/layouts/article';
 import Section from '../components/section';
 import Paragraph from '../components/paragraph';
 import { BioSection, BioYear } from '../components/bio';
+import { GridItem } from '../components/grid-item'
+import thumbYoutube from '../public/images/links/youtube.png'
 import {
   IoLogoInstagram,
   IoLogoGithub,
@@ -14,22 +28,22 @@ import {
 const Page = () => {
   return (
     <Layout>
-      <react.Container>
-        <react.Box borderRadius="lg" bg={react.useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mb={6} align="center">
+      <Container>
+        <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mb={6} align="center">
           Hello, I&apos;m a full-stack developer based in Russia!
-        </react.Box>
-        <react.Box display={{ md: 'flex' }}>
-          <react.Box flexGrow={1}>
-            <react.Heading as="h2" variant="page-title">Adilet Soronov</react.Heading>
+        </Box>
+        <Box display={{ md: 'flex' }}>
+          <Box flexGrow={1}>
+            <Heading as="h2" variant="page-title">Adilet Soronov</Heading>
             <p>Web developer ( Student / Programmer )</p>
-          </react.Box>
-          <react.Box
+          </Box>
+          <Box
             flexShrink={0}
             mt={{ base: 4, md: 0 }}
             ml={{ md: 6 }}
             align='center'
           >
-            <react.Image
+            <Image
               borderColor='whiteAlpha.800'
               borderWidth={2}
               borderStyle='solid'
@@ -39,25 +53,25 @@ const Page = () => {
               src='images/takuya.jpg'
               alt='Profile Image'
             />
-          </react.Box>
-        </react.Box>
+          </Box>
+        </Box>
         <Section delay={0.1}>
-          <react.Heading as='h3' variant='section-title'>
+          <Heading as='h3' variant='section-title'>
             Work
-          </react.Heading>
+          </Heading>
           <Paragraph>I am a student at Tomsk State University (TSU) and a part time full-stack developer. I primarily develper using .NET and React. Also my interests include WebAssembly and Blazor.</Paragraph>
-          <react.Box align='center' my={4}>
+          <Box align='center' my={4}>
             <NextLink href='/works'>
-              <react.Button rightIcon={<ChevronRightIcon />} colorScheme='teal'>
+              <Button rightIcon={<ChevronRightIcon />} colorScheme='teal'>
                 My portfolio
-              </react.Button>
+              </Button>
             </NextLink>
-          </react.Box>
+          </Box>
         </Section>
         <Section delay={0.2}>
-          <react.Heading as='h3' variant='selection-title'>
+          <Heading as='h3' variant='selection-title'>
             Bio
-          </react.Heading>
+          </Heading>
           <BioSection>
             <BioYear>2001</BioYear>
             Born in Bishkek, Kyrgyzstan.
@@ -68,43 +82,47 @@ const Page = () => {
           </BioSection>
         </Section>
         <Section delay="0.3">
-          <react.Heading as="h3" variant="section-title">
+          <Heading as="h3" variant="section-title">
             I ♥
-          </react.Heading>
+          </Heading>
           <Paragraph>
             Art, Music, Cycling, Walking at night
           </Paragraph>
         </Section>
 
         <Section delay={0.3}>
-          <react.Heading as='h3' variant='section-title'>
+          <Heading as='h3' variant='section-title'>
             On the web
-          </react.Heading>
-          <react.List>
-            <react.ListItem>
-              <react.Link href='https://github.com/adiletelf' target='_blank'>
-                <react.Button variant='ghost' colorScheme='teal' leftIcon={<react.Icon as={IoLogoGithub} />}>
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href='https://github.com/adiletelf' target='_blank'>
+                <Button variant='ghost' colorScheme='teal' leftIcon={<Icon as={IoLogoGithub} />}>
                   @adiletelf
-                </react.Button>
-              </react.Link>
-            </react.ListItem>
-            <react.ListItem>
-              <react.Link href='https://instagram.com/adiletelf' target='_blank'>
-                <react.Button variant='ghost' colorScheme='teal' leftIcon={<react.Icon as={IoLogoInstagram} />}>
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href='https://instagram.com/adiletelf' target='_blank'>
+                <Button variant='ghost' colorScheme='teal' leftIcon={<Icon as={IoLogoInstagram} />}>
                   @adiletelf
-                </react.Button>
-              </react.Link>
-            </react.ListItem>
-            <react.ListItem>
-              <react.Link href='http://discordapp.com/users/690854717374595092' target='_blank'>
-                <react.Button variant='ghost' colorScheme='teal' leftIcon={<react.Icon as={IoLogoDiscord} />}>
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href='http://discordapp.com/users/690854717374595092' target='_blank'>
+                <Button variant='ghost' colorScheme='teal' leftIcon={<Icon as={IoLogoDiscord} />}>
                   @adiletelf
-                </react.Button>
-              </react.Link>
-            </react.ListItem>
-          </react.List>
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+
+          <SimpleGrid column={[1, 2, 2]} gap={6}>
+            <GridItem href='https://www.youtube.com/devaslife' title='Dev as Life' thumbnail={thumbYoutube}></GridItem>
+          </SimpleGrid>
         </Section>
-      </react.Container>
+      </Container>
     </Layout>
   );
 };
