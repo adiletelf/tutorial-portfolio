@@ -65,7 +65,7 @@ const Page = () => {
           </Heading>
           <Paragraph>
             I am a student at Tomsk State University (TSU) and a part time
-            full-stack developer. I primarily develper using .NET and React.
+            full-stack developer. I primarily develop using .NET and React.
             Also my interests include WebAssembly and Blazor.
           </Paragraph>
           <Box align="center" my={4}>
@@ -139,13 +139,14 @@ const Page = () => {
             </ListItem>
           </List>
 
-          <SimpleGrid column={[1, 2, 2]} gap={6}>
+          {/* YouTube Thumbnail */}
+          {/* <SimpleGrid column={[1, 2, 2]} gap={6}>
             <GridItem
               href="https://www.youtube.com/devaslife"
               title="Dev as Life"
               thumbnail={thumbYoutube}
             ></GridItem>
-          </SimpleGrid>
+          </SimpleGrid> */}
         </Section>
       </Container>
     </Layout>
