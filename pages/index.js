@@ -140,13 +140,13 @@ const Page = () => {
           </List>
 
           {/* YouTube Thumbnail */}
-          {/* <SimpleGrid column={[1, 2, 2]} gap={6}>
+          <SimpleGrid column={[1, 2, 2]} gap={6}>
             <GridItem
               href="https://www.youtube.com/devaslife"
               title="Dev as Life"
               thumbnail={thumbYoutube}
             ></GridItem>
-          </SimpleGrid> */}
+          </SimpleGrid>
         </Section>
       </Container>
     </Layout>
